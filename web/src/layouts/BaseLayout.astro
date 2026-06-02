@@ -1,0 +1,199 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "07 AY — 360° Dijital Ajans | İşletmenizi Dijital Dünyaya Taşıyalım",
+  description = "Google, Instagram ve Facebook'ta görünür olun, yeni müşteriler kazanın. Web sitesi, sosyal medya yönetimi, SEO, dijital reklam ve daha fazlası. Antalya merkezli dijital ajans.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://07ay.com" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#030712" />
+    <meta name="author" content="07 AY Dijital Ajans" />
+
+    <!-- Geo Targeting -->
+    <meta name="geo.region" content="TR-07" />
+    <meta name="geo.placename" content="Antalya" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="07 AY Dijital Ajans" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://07ay.com" />
+    <meta property="og:locale" content="tr_TR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Schema.org - Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "07 AY Dijital Ajans",
+      "alternateName": "07ay",
+      "url": "https://07ay.com",
+      "logo": "https://07ay.com/favicon.svg",
+      "description": "İşletmelerin dijital dünyada büyümesini sağlayan 360° dijital ajans. SEO, sosyal medya yönetimi, web tasarım, dijital reklam ve daha fazlası.",
+      "foundingDate": "2024",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Turkey"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+90-543-940-20-19",
+          "contactType": "customer service",
+          "availableLanguage": "Turkish",
+          "areaServed": "TR"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+90-530-770-24-35",
+          "contactType": "sales",
+          "availableLanguage": "Turkish",
+          "areaServed": "TR"
+        }
+      ],
+      "sameAs": []
+    })} />
+
+    <!-- Schema.org - LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "07 AY Dijital Ajans",
+      "image": "https://07ay.com/favicon.svg",
+      "url": "https://07ay.com",
+      "telephone": "+90-543-940-20-19",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Antalya",
+        "addressCountry": "TR"
+      },
+      "priceRange": "₺₺",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Dijital Ajans Hizmetleri",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO - Arama Motoru Optimizasyonu",
+              "description": "Google'da üst sıralarda yer almanızı sağlıyoruz."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sosyal Medya Yönetimi",
+              "description": "Instagram, Facebook ve TikTok hesaplarınızı profesyonelce yönetiyoruz."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Sitesi Tasarımı ve Geliştirme",
+              "description": "Modern, hızlı ve mobil uyumlu web sitenizi tasarlıyoruz."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Dijital Reklam Yönetimi",
+              "description": "Google Ads, Meta Ads, TikTok Ads ve YouTube reklamlarınızı yönetiyoruz."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Logo ve Marka Kimliği Tasarımı",
+              "description": "Profesyonel logo ve kurumsal kimlik tasarımı yapıyoruz."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "E-Ticaret Çözümleri",
+              "description": "Online satış sitenizi kuruyor, pazar yeri entegrasyonlarınızı yapıyoruz."
+            }
+          }
+        ]
+      }
+    })} />
+
+    <!-- Schema.org - WebSite (for sitelinks search box) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "07 AY Dijital Ajans",
+      "url": "https://07ay.com"
+    })} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-night-900 text-text-secondary antialiased">
+    <slot />
+
+    <!-- Scroll Reveal Script -->
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

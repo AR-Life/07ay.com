@@ -1,0 +1,58 @@
+---
+const sectors = [
+  { icon: "🏪", name: "Esnaf" },
+  { icon: "🏠", name: "Emlakçı" },
+  { icon: "🚗", name: "Galerici" },
+  { icon: "🍽️", name: "Restoran" },
+  { icon: "🏨", name: "Otel" },
+  { icon: "🏥", name: "Klinik" },
+  { icon: "💇", name: "Kuaför" },
+  { icon: "🔧", name: "Usta" },
+  { icon: "🏗️", name: "İnşaat" },
+  { icon: "📚", name: "Eğitim" },
+  { icon: "⚖️", name: "Avukat" },
+  { icon: "🦷", name: "Diş Hekimi" },
+  { icon: "💊", name: "Eczane" },
+  { icon: "🏋️", name: "Spor Salonu" },
+  { icon: "🌸", name: "Güzellik" },
+  { icon: "✨", name: "Ve Daha Fazlası" },
+];
+---
+
+<section id="sektorler" class="relative py-24 lg:py-32 overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-night-800 to-night-900"></div>
+  <div class="absolute top-1/2 right-0 w-96 h-96 bg-cosmic-purple/5 rounded-full blur-[128px] pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div class="reveal inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6">
+        <span class="text-sm text-gold-400">Sektörler</span>
+      </div>
+      <h2 class="reveal reveal-delay-1 section-title mb-4">
+        Hizmet Verdiğimiz
+        <span class="gradient-gold">Sektörler</span>
+      </h2>
+      <p class="reveal reveal-delay-2 section-subtitle mx-auto">
+        Her sektöre özel dijital çözümler sunuyoruz. Hangi sektörde olursanız olun, dijital dünyadaki yerinizi birlikte oluşturalım.
+      </p>
+    </div>
+
+    <!-- Sectors Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+      {
+        sectors.map((sector, i) => (
+          <div class={`reveal reveal-delay-${(i % 5) + 1} glass-card p-4 text-center group cursor-default`}>
+            <div class="text-3xl mb-2 transition-transform duration-300 group-hover:scale-125">
+              {sector.icon}
+            </div>
+            <span class="text-xs font-medium text-text-secondary group-hover:text-white transition-colors duration-300">
+              {sector.name}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

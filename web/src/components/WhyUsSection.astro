@@ -1,0 +1,98 @@
+---
+const reasons = [
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+    stat: "150+",
+    title: "Tamamlanan Proje",
+    description: "Farklı sektörlerden 150'den fazla işletmeye dijital çözümler sunduk.",
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    stat: "Uzman Ekip",
+    title: "Deneyimli Kadro",
+    description: "Alanında uzman tasarımcı, geliştirici ve pazarlama ekibi.",
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    stat: "%100",
+    title: "Müşteri Memnuniyeti",
+    description: "Müşteri odaklı yaklaşımımız ile her projede en iyisini hedefliyoruz.",
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+    stat: "7/24",
+    title: "Kesintisiz Destek",
+    description: "WhatsApp üzerinden her zaman ulaşabilirsiniz. Sorularınıza hızlı yanıt.",
+  },
+];
+---
+
+<section id="neden-biz" class="relative py-24 lg:py-32 overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-night-900 to-night-800"></div>
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold-500/5 rounded-full blur-[200px] pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left: Text Content -->
+      <div>
+        <div class="reveal inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6">
+          <span class="text-sm text-gold-400">Neden 07 AY?</span>
+        </div>
+        <h2 class="reveal reveal-delay-1 section-title mb-6">
+          Dijital Dünyada
+          <span class="gradient-gold">Yerinizi Ayırın</span>
+        </h2>
+        <p class="reveal reveal-delay-2 section-subtitle mb-8">
+          Rakiplerinizden bir adım önde olun. Google'da, sosyal medyada ve web'de işletmenizi büyütecek stratejileri birlikte oluşturalım.
+        </p>
+
+        <!-- Inline Benefits -->
+        <div class="reveal reveal-delay-3 space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gold-500/20 flex items-center justify-center mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <p class="text-text-secondary">Daha fazla <span class="text-white font-medium">görünürlük</span> — Google ve sosyal medyada öne çıkın</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gold-500/20 flex items-center justify-center mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <p class="text-text-secondary">Daha fazla <span class="text-white font-medium">müşteri</span> — hedef kitlenize ulaşın</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-gold-500/20 flex items-center justify-center mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <p class="text-text-secondary">Daha fazla <span class="text-white font-medium">kazanç</span> — yatırımınızın karşılığını alın</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Stats Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {
+          reasons.map((reason, i) => (
+            <div class={`reveal reveal-delay-${i + 1} glass-card p-6 group`}>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 transition-all duration-300 group-hover:bg-gold-500/20 group-hover:scale-110">
+                  <Fragment set:html={reason.icon} />
+                </div>
+                <span class="text-2xl font-extrabold gradient-gold">{reason.stat}</span>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2">{reason.title}</h3>
+              <p class="text-sm text-text-muted leading-relaxed">{reason.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
