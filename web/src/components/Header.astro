@@ -124,28 +124,33 @@ const navLinks = [
   // Header scroll effect
   const header = document.getElementById("header");
   let lastScroll = 0;
+  let ticking = false;
 
   window.addEventListener("scroll", () => {
-    const currentScroll = window.scrollY;
+    lastScroll = window.scrollY;
 
-    if (currentScroll > 50) {
-      header?.classList.add(
-        "bg-night-900/80",
-        "backdrop-blur-xl",
-        "border-b",
-        "border-white/5"
-      );
-    } else {
-      header?.classList.remove(
-        "bg-night-900/80",
-        "backdrop-blur-xl",
-        "border-b",
-        "border-white/5"
-      );
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (lastScroll > 50) {
+          header?.classList.add(
+            "bg-night-900/80",
+            "backdrop-blur-xl",
+            "border-b",
+            "border-white/5"
+          );
+        } else {
+          header?.classList.remove(
+            "bg-night-900/80",
+            "backdrop-blur-xl",
+            "border-b",
+            "border-white/5"
+          );
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
-
-    lastScroll = currentScroll;
-  });
+  }, { passive: true });
 
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
