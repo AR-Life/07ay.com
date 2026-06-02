@@ -15,7 +15,7 @@ const navLinks = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group">
+      <a href="/" title="07 AY Ana Sayfa" class="flex items-center gap-2 group">
         <div class="relative">
           <svg
             width="40"
@@ -46,10 +46,11 @@ const navLinks = [
       <nav class="hidden lg:flex items-center gap-8">
         {
           navLinks.map((link) => (
-            <a
-              href={link.href}
-              class="text-sm font-medium text-text-secondary hover:text-white transition-colors duration-200"
-            >
+          <a
+            href={link.href}
+            title={link.label}
+            class="text-sm font-medium text-text-secondary hover:text-white transition-colors duration-200"
+          >
               {link.label}
             </a>
           ))
@@ -62,6 +63,7 @@ const navLinks = [
           href="https://wa.me/905439402019?text=Merhaba%2C%20bilgi%20almak%20istiyorum."
           target="_blank"
           rel="noopener noreferrer"
+          title="WhatsApp'tan İletişime Geçin"
           class="btn-primary text-sm"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -95,6 +97,7 @@ const navLinks = [
         navLinks.map((link) => (
           <a
             href={link.href}
+            title={link.label}
             class="mobile-nav-link text-lg font-medium text-text-secondary hover:text-white transition-colors duration-200 py-2"
           >
             {link.label}
@@ -105,6 +108,7 @@ const navLinks = [
         href="https://wa.me/905439402019?text=Merhaba%2C%20bilgi%20almak%20istiyorum."
         target="_blank"
         rel="noopener noreferrer"
+        title="WhatsApp'tan İletişime Geçin"
         class="btn-primary text-center justify-center mt-2"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

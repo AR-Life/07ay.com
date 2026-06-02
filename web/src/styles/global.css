@@ -32,8 +32,8 @@
   --color-glass-border-hover: rgba(255, 255, 255, 0.2);
 
   /* Fonts */
-  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter Variable', system-ui, -apple-system, sans-serif;
 
   /* Backdrop Blur */
   --blur-glass: 16px;

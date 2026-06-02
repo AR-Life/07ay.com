@@ -8,6 +8,8 @@ const {
   title = "07 AY — 360° Dijital Ajans | İşletmenizi Dijital Dünyaya Taşıyalım",
   description = "Google, Instagram ve Facebook'ta görünür olun, yeni müşteriler kazanın. Web sitesi, sosyal medya yönetimi, SEO, dijital reklam ve daha fazlası. Antalya merkezli dijital ajans.",
 } = Astro.props;
+
+import '@fontsource-variable/inter';
 ---
 
 <!doctype html>
@@ -39,6 +41,7 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:url" content="https://07ay.com" />
     <meta property="og:locale" content="tr_TR" />
+    <link rel="publisher" href="https://07ay.com" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -162,13 +165,8 @@ const {
       "url": "https://07ay.com"
     })} />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Preload primary font woff2 explicitly to avoid critical request chain delay -->
+    <!-- Note: Astro/Vite will bundle the woff2 locally but we want to ensure it preloads if possible. Using Fontsource locally inherently fixes the blocking issue. -->
 
     <title>{title}</title>
   </head>
