@@ -1,0 +1,120 @@
+---
+// src/components/PortfolioSection.astro
+import OptimizeImage from "./OptimizeImage.astro";
+import fzlImage from "../assets/portfolio/fzl-otomotiv.jpg";
+import mediImage from "../assets/portfolio/medi-belive.jpg";
+import fethiyeImage from "../assets/portfolio/fethiye-diyetisyen.jpg";
+
+const projects = [
+  {
+    title: "FZL Otomotiv",
+    category: "Oto Galeri",
+    url: "https://fzlotomotiv.com",
+    image: fzlImage,
+    tags: ["Kurumsal", "Otomotiv", "SEO"],
+  },
+  {
+    title: "MediBelieve",
+    category: "Sağlık Turizmi",
+    url: "https://medibelieve.de",
+    image: mediImage,
+    tags: ["Sağlık Turizmi", "Çoklu Dil", "Hızlı"],
+  },
+  {
+    title: "Afra Nur Kaşlı",
+    category: "Diyetisyen",
+    url: "https://fethiyediyetisyen.com.tr",
+    image: fethiyeImage,
+    tags: ["Kişisel Blog", "Randevu", "GEO Hedefleme"],
+  },
+];
+---
+
+<section id="portfolyo" class="relative py-24 overflow-hidden">
+  <div class="absolute inset-0 bg-night-950 z-0"></div>
+  <div
+    class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-500/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 z-0 pointer-events-none"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <h2 class="section-title mb-4">
+        Öne Çıkan <span class="gradient-blue">Projelerimiz</span>
+      </h2>
+      <p class="section-subtitle mx-auto">
+        İşletmelerin dijital hedeflerine ulaşmalarını sağladığımız, yüksek
+        performanslı ve SEO uyumlu referans web projelerimizden bazıları.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project, index) => (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            class={`glass-card group overflow-hidden rounded-3xl reveal reveal-delay-${(index % 3) + 1} block`}
+          >
+            <div class="relative h-64 overflow-hidden">
+              <OptimizeImage
+                src={project.image}
+                alt={`${project.title} - 07 AY Projeleri`}
+                loading="lazy"
+                width={800}
+                height={450}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-night-950 via-night-900/50 to-transparent opacity-80 pointer-events-none" />
+
+              <div class="absolute bottom-4 left-4 right-4 flex gap-2 flex-wrap z-10">
+                {project.tags.map((tag) => (
+                  <span class="px-3 py-1 text-xs font-semibold rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div class="p-6 relative z-10">
+              <p class="text-gold-400 text-sm font-semibold uppercase tracking-wider mb-2">
+                {project.category}
+              </p>
+              <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cosmic-blue transition-colors flex items-center justify-between">
+                {project.title}
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </h3>
+              <p class="text-text-muted text-sm">
+                {project.url.replace("https://", "")}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="mt-16 text-center reveal reveal-delay-4">
+      <a
+        href="#iletisim"
+        class="btn-secondary"
+        aria-label="Projelerimiz hakkında bilgi almak için bizimle iletişime geçin"
+      >
+        Projenizi Başlatalım
+      </a>
+    </div>
+  </div>
+</section>
