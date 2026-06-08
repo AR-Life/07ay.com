@@ -2,23 +2,29 @@
 const currentYear = new Date().getFullYear();
 
 const quickLinks = [
+  { label: "Hakkımızda", href: "#hakkimizda" },
   { label: "Hizmetler", href: "#hizmetler" },
   { label: "Neden Biz?", href: "#neden-biz" },
+  { label: "Portfolyo", href: "#portfolyo" },
   { label: "Sektörler", href: "#sektorler" },
   { label: "Yorumlar", href: "#yorumlar" },
+  { label: "SSS", href: "#sss" },
+  { label: "İletişim", href: "#iletisim" },
 ];
 
 const services = [
-  "Antalya Yerel SEO & Reklam",
-  "Sosyal Medya Yönetimi",
-  "Antalya Web Tasarım",
-  "Logo & Marka Kimliği",
-  "Video & Fotoğraf Çekimi",
-  "E-Ticaret Çözümleri",
+  { label: "Antalya Web Tasarım", href: "#hizmetler" },
+  { label: "Antalya SEO Danışmanlığı", href: "#hizmetler" },
+  { label: "Sosyal Medya Yönetimi", href: "#hizmetler" },
+  { label: "Google Ads Reklam", href: "#hizmetler" },
+  { label: "Logo & Marka Kimliği", href: "#hizmetler" },
+  { label: "E-Ticaret Çözümleri", href: "#hizmetler" },
+  { label: "Video & Fotoğraf", href: "#hizmetler" },
+  { label: "WhatsApp Business", href: "#hizmetler" },
 ];
 ---
 
-<footer id="iletisim" class="relative pt-20 pb-8 overflow-hidden">
+<footer class="relative pt-20 pb-8 overflow-hidden">
   <!-- Background -->
   <div class="absolute inset-0 bg-gradient-to-b from-night-900 to-night-950">
   </div>
@@ -36,7 +42,7 @@ const services = [
       <div class="lg:col-span-1">
         <a
           href="/"
-          title="07 AY Ana Sayfa"
+          title="07 AY Dijital Ajans Ana Sayfa — Antalya Web Tasarım"
           class="flex items-center gap-2 mb-4"
         >
           <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
@@ -63,13 +69,13 @@ const services = [
           >
         </a>
         <p class="text-sm text-text-muted leading-relaxed mb-6">
-          Antalya'daki işletmelerin dijital dünyada büyümesini sağlayan 360° dijital ajans. Profesyonel web tasarım, yerel SEO, sosyal medya yönetimi ve dijital reklam stratejileri bir arada.
+          <strong>07 AY Dijital Ajans</strong> — Antalya merkezli profesyonel <strong>web tasarım</strong>, <strong>SEO danışmanlığı</strong>, <strong>sosyal medya yönetimi</strong> ve <strong>dijital reklam</strong> ajansı. İşletmelerin dijital dünyada büyümesini sağlayan 360° dijital çözüm ortağınız. Google'da 1. sayfada yer alın, yeni müşteriler kazanın.
         </p>
         <!-- Social Icons -->
         <div class="flex items-center gap-3">
           <a
             href="#"
-            title="Instagram"
+            title="07 AY Dijital Ajans Instagram"
             rel="nofollow"
             class="w-9 h-9 rounded-lg glass flex items-center justify-center text-text-muted hover:text-white hover:bg-white/10 transition-all duration-200"
             aria-label="Instagram"
@@ -94,7 +100,7 @@ const services = [
           </a>
           <a
             href="#"
-            title="Facebook"
+            title="07 AY Dijital Ajans Facebook"
             rel="nofollow"
             class="w-9 h-9 rounded-lg glass flex items-center justify-center text-text-muted hover:text-white hover:bg-white/10 transition-all duration-200"
             aria-label="Facebook"
@@ -116,7 +122,7 @@ const services = [
           </a>
           <a
             href="#"
-            title="LinkedIn"
+            title="07 AY Dijital Ajans LinkedIn"
             rel="nofollow"
             class="w-9 h-9 rounded-lg glass flex items-center justify-center text-text-muted hover:text-white hover:bg-white/10 transition-all duration-200"
             aria-label="LinkedIn"
@@ -141,7 +147,7 @@ const services = [
           </a>
           <a
             href="#"
-            title="YouTube"
+            title="07 AY Dijital Ajans YouTube"
             rel="nofollow"
             class="w-9 h-9 rounded-lg glass flex items-center justify-center text-text-muted hover:text-white hover:bg-white/10 transition-all duration-200"
             aria-label="YouTube"
@@ -166,7 +172,7 @@ const services = [
       </div>
 
       <!-- Quick Links -->
-      <div>
+      <nav aria-label="Hızlı linkler">
         <h3
           class="text-sm font-semibold text-white uppercase tracking-wider mb-4"
         >
@@ -187,25 +193,31 @@ const services = [
             ))
           }
         </ul>
-      </div>
+      </nav>
 
       <!-- Services -->
-      <div>
+      <nav aria-label="Hizmetler">
         <h3
           class="text-sm font-semibold text-white uppercase tracking-wider mb-4"
         >
-          Hizmetler
+          Antalya Dijital Ajans Hizmetleri
         </h3>
         <ul class="space-y-3">
           {
             services.map((service) => (
               <li>
-                <span class="text-sm text-text-muted">{service}</span>
+                <a
+                  href={service.href}
+                  title={service.label}
+                  class="text-sm text-text-muted hover:text-gold-400 transition-colors duration-200"
+                >
+                  {service.label}
+                </a>
               </li>
             ))
           }
         </ul>
-      </div>
+      </nav>
 
       <!-- Contact -->
       <div>
@@ -218,7 +230,7 @@ const services = [
           <li>
             <a
               href="https://wa.me/905307702435"
-              title="WhatsApp İletişim"
+              title="07 AY Dijital Ajans WhatsApp İletişim"
               target="_blank"
               rel="noopener noreferrer nofollow"
               class="flex items-center gap-3 text-sm text-text-muted hover:text-green-400 transition-colors duration-200"
@@ -240,7 +252,7 @@ const services = [
           <li>
             <a
               href="tel:+905439402019"
-              title="Destek Hattı"
+              title="07 AY Destek Hattı"
               class="flex items-center gap-3 text-sm text-text-muted hover:text-gold-400 transition-colors duration-200"
             >
               <svg
@@ -259,6 +271,29 @@ const services = [
                 ></path>
               </svg>
               0543 940 20 19
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:info@07ay.com"
+              title="07 AY E-posta"
+              class="flex items-center gap-3 text-sm text-text-muted hover:text-gold-400 transition-colors duration-200"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="flex-shrink-0"
+              >
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              info@07ay.com
             </a>
           </li>
           <li>
@@ -283,7 +318,7 @@ const services = [
           <li>
             <a
               href="https://07ay.com"
-              title="07 AY Web Sitesi"
+              title="07 AY Dijital Ajans Web Sitesi"
               class="flex items-center gap-3 text-sm text-text-muted hover:text-gold-400 transition-colors duration-200"
             >
               <svg
@@ -317,7 +352,7 @@ const services = [
       class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
     >
       <p class="text-xs text-text-muted">
-        © {currentYear} 07 AY Dijital Ajans. Tüm hakları saklıdır.
+        © {currentYear} <strong>07 AY Dijital Ajans</strong> — Antalya Web Tasarım, SEO ve Dijital Reklam Ajansı. Tüm hakları saklıdır.
       </p>
       <p class="text-xs text-text-muted">Antalya'dan 🌙 ile yapıldı.</p>
     </div>

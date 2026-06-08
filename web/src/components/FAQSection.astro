@@ -1,0 +1,148 @@
+---
+const faqs = [
+  {
+    question: "Antalya'da en iyi web tasarım firması hangisi?",
+    answer:
+      "Antalya'da en iyi web tasarım firması seçerken hız, SEO uyumu ve modern tasarım kriterlerine dikkat etmelisiniz. 07 AY Dijital Ajans, Google PageSpeed testlerinde 100/100 performans sağlayan, mobil uyumlu ve SEO altyapılı kurumsal web siteleri tasarlayan Antalya merkezli profesyonel bir web tasarım ajansıdır. WordPress gibi hantal altyapılar yerine, dünya standartlarında modern teknolojiler (Astro, Tailwind CSS, Cloudflare) kullanarak işletmenize özel, hızlı ve güvenli siteler üretiyoruz.",
+  },
+  {
+    question: "Antalya web sitesi yaptırmanın maliyeti ne kadar?",
+    answer:
+      "Antalya'da web sitesi yaptırma maliyeti, projenin kapsamına göre değişir. Tek sayfalık tanıtım siteleri, çok sayfalık kurumsal siteler ve e-ticaret siteleri farklı fiyat aralıklarına sahiptir. 07 AY olarak şeffaf fiyatlandırma politikamızla, sürpriz maliyetler çıkarmadan, işletmenizin bütçesine uygun çözümler sunuyoruz. Ücretsiz analiz ve fiyat teklifi almak için WhatsApp hattımızdan bize ulaşabilirsiniz.",
+  },
+  {
+    question: "SEO çalışması ne kadar sürede sonuç verir?",
+    answer:
+      "Profesyonel SEO çalışması genellikle 3-6 ay içinde somut sonuçlar vermeye başlar. Ancak bu süre, sektörünüzdeki rekabet düzeyine, hedeflenen anahtar kelimelere ve mevcut sitenizin durumuna bağlıdır. 07 AY olarak Antalya yerel SEO stratejileriyle, Google Haritalar ve organik arama sonuçlarında işletmenizin görünürlüğünü artırıyoruz. Yerel (GEO) odaklı çalışmalarımız sayesinde Antalya bölgesinde daha hızlı sonuç almanız mümkündür.",
+  },
+  {
+    question: "Sosyal medya yönetimi hizmetiniz neleri kapsar?",
+    answer:
+      "Antalya sosyal medya yönetimi hizmetimiz; Instagram, Facebook, TikTok ve LinkedIn için profesyonel içerik üretimi, post ve reel tasarımları, hashtag stratejisi, takipçi etkileşim yönetimi, reklam kampanyaları ve aylık performans raporlarını kapsar. Markanızın sosyal medyada güçlü bir varlık oluşturmasını sağlıyoruz. İçerik takvimi hazırlama, rakip analizi ve hedef kitle belirleme de dahildir.",
+  },
+  {
+    question: "Neden profesyonel bir dijital ajansla çalışmalıyım?",
+    answer:
+      "Profesyonel bir dijital ajansla çalışmak, zamanınızı ve bütçenizi verimli kullanmanızı sağlar. Amatör çözümler kısa vadede ucuz görünse de, SEO uyumsuz siteler Google'da görünmez, kalitesiz sosyal medya içerikleri müşteri kaybettirir. 07 AY Dijital Ajans olarak stratejik planlama, profesyonel tasarım, teknik SEO ve veri odaklı raporlama ile yatırımınızın karşılığını fazlasıyla almanızı sağlıyoruz.",
+  },
+  {
+    question: "Google Ads ile organik SEO arasındaki fark nedir?",
+    answer:
+      "Google Ads (ücretli reklam), bütçe ayırdığınız sürece anında üst sıralarda görünmenizi sağlar. Organik SEO ise uzun vadeli bir yatırımdır; doğru yapıldığında sürekli ve ücretsiz trafik getirir. 07 AY olarak her iki stratejiyi de birlikte uyguluyoruz: kısa vadede Google Ads ile hemen müşteri kazanırken, uzun vadede organik SEO ile kalıcı sonuçlar elde ediyoruz. Antalya bölgesinde her iki alanda da uzman ekibimizle sonuç odaklı çalışıyoruz.",
+  },
+  {
+    question: "Antalya'da e-ticaret sitesi kurmak ne kadar sürer?",
+    answer:
+      "Antalya'da profesyonel bir e-ticaret sitesi kurulumu, projenin kapsamına bağlı olarak 2-6 hafta sürer. Ürün sayısı, ödeme entegrasyonları, kargo firması entegrasyonları ve özel tasarım istekleri süreyi etkiler. 07 AY olarak Trendyol, Hepsiburada gibi pazar yeri entegrasyonları da dahil olmak üzere komple e-ticaret çözümleri sunuyoruz. SEO uyumlu altyapısı sayesinde Google'da görünürlüğünüz en üst düzeyde olur.",
+  },
+  {
+    question: "Logo tasarımı süreci nasıl işler?",
+    answer:
+      "Logo ve marka kimliği tasarım sürecimiz 4 adımdan oluşur: İlk olarak markanızı, sektörünüzü ve hedef kitlenizi analiz ediyoruz. Ardından 3-5 farklı konsept tasarım sunuyoruz. Seçtiğiniz konsept üzerinde revizyonlar yapıp mükemmelleştiriyoruz. Son olarak logonuzu tüm formatlarda (vektörel, PNG, favicon) teslim ediyoruz. Kurumsal kimlik paketi; kartvizit, antetli kağıt, sosyal medya kit ve brand guideline'ı kapsar.",
+  },
+  {
+    question: "Dijital reklam bütçemi nasıl belirlemeliyim?",
+    answer:
+      "Dijital reklam bütçesi, sektörünüze, hedeflerinize ve rekabet düzeyine göre belirlenir. Antalya'da yerel bir işletme için Google Ads ve Meta (Instagram/Facebook) reklamlarında optimum sonuçlar almak mümkündür. 07 AY olarak reklam bütçenizi en verimli şekilde kullanıyoruz; A/B testleri, hedef kitle optimizasyonu ve detaylı dönüşüm raporları ile her kuruşun karşılığını almanızı sağlıyoruz.",
+  },
+  {
+    question: "Hangi sosyal medya platformu işletmem için en uygun?",
+    answer:
+      "En uygun sosyal medya platformu, işletmenizin sektörüne ve hedef kitlesine bağlıdır. Restoran, otel ve güzellik sektörü için Instagram ve TikTok; B2B hizmetler için LinkedIn; genel tüketici ürünleri için Facebook ve Instagram öne çıkar. 07 AY Dijital Ajans olarak Antalya'daki işletmeniz için en etkili platform stratejisini belirliyor, içerik üretiminden reklam yönetimine kadar tüm süreci profesyonelce yönetiyoruz.",
+  },
+];
+---
+
+<section id="sss" class="relative py-24 lg:py-32 overflow-hidden">
+  <!-- Background -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-night-900 via-night-800 to-night-900"
+  >
+  </div>
+  <div
+    class="absolute top-1/3 left-0 w-96 h-96 bg-cosmic-purple/5 rounded-full blur-[128px] pointer-events-none"
+  >
+  </div>
+  <div
+    class="absolute bottom-1/3 right-0 w-96 h-96 bg-gold-500/5 rounded-full blur-[128px] pointer-events-none"
+  >
+  </div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div
+        class="reveal inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6"
+      >
+        <span class="text-sm text-gold-400">Sıkça Sorulan Sorular</span>
+      </div>
+      <h2 class="reveal reveal-delay-1 section-title mb-4">
+        Merak Ettikleriniz
+        <span class="gradient-gold">Yanıtlarıyla Burada</span>
+      </h2>
+      <p class="reveal reveal-delay-2 section-subtitle mx-auto">
+        Antalya web tasarım, SEO, dijital reklam ve sosyal medya yönetimi
+        hakkında en çok sorulan soruları sizin için derledik.
+      </p>
+    </div>
+
+    <!-- FAQ Items -->
+    <div class="space-y-4">
+      {
+        faqs.map((faq, i) => (
+          <details
+            class={`reveal reveal-delay-${(i % 4) + 1} glass-card group`}
+          >
+            <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none">
+              <h3 class="text-base sm:text-lg font-semibold text-white text-left leading-snug">
+                {faq.question}
+              </h3>
+              <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-gold-500/10 flex items-center justify-center text-gold-400 transition-transform duration-300 group-open:rotate-45">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 pt-0">
+              <p class="text-text-secondary text-sm sm:text-base leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="reveal text-center mt-12">
+      <p class="text-text-muted mb-4">
+        Başka sorularınız mı var? Hemen sorun, 7/24 yanıtlayalım.
+      </p>
+      <a
+        href="https://wa.me/905307702435?text=Merhaba%2C%20bir%20sorum%20var."
+        target="_blank"
+        title="SSS - WhatsApp Soru Hattı"
+        rel="noopener noreferrer nofollow"
+        class="btn-secondary"
+      >
+        WhatsApp'tan Sorun →
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

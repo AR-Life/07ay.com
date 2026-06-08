@@ -1,21 +1,21 @@
 ---
 const sectors = [
-  { icon: "🏪", name: "Esnaf" },
-  { icon: "🏠", name: "Emlakçı" },
-  { icon: "🚗", name: "Galerici" },
-  { icon: "🍽️", name: "Restoran" },
-  { icon: "🏨", name: "Otel" },
-  { icon: "🏥", name: "Klinik" },
-  { icon: "💇", name: "Kuaför" },
-  { icon: "🔧", name: "Usta" },
-  { icon: "🏗️", name: "İnşaat" },
-  { icon: "📚", name: "Eğitim" },
-  { icon: "⚖️", name: "Avukat" },
-  { icon: "🦷", name: "Diş Hekimi" },
-  { icon: "💊", name: "Eczane" },
-  { icon: "🏋️", name: "Spor Salonu" },
-  { icon: "🌸", name: "Güzellik" },
-  { icon: "✨", name: "Ve Daha Fazlası" },
+  { icon: "🏪", name: "Esnaf & Mağaza", desc: "Antalya esnaf web sitesi" },
+  { icon: "🏠", name: "Emlak & Gayrimenkul", desc: "Antalya emlak web sitesi" },
+  { icon: "🚗", name: "Oto Galeri", desc: "Antalya oto galeri web sitesi" },
+  { icon: "🍽️", name: "Restoran & Kafe", desc: "Antalya restoran web sitesi" },
+  { icon: "🏨", name: "Otel & Pansiyon", desc: "Antalya otel web sitesi" },
+  { icon: "🏥", name: "Klinik & Hastane", desc: "Antalya klinik web sitesi" },
+  { icon: "💇", name: "Kuaför & Berber", desc: "Antalya kuaför web sitesi" },
+  { icon: "🔧", name: "Usta & Servis", desc: "Antalya usta web sitesi" },
+  { icon: "🏗️", name: "İnşaat & Mimarlık", desc: "Antalya inşaat web sitesi" },
+  { icon: "📚", name: "Eğitim & Kurs", desc: "Antalya eğitim web sitesi" },
+  { icon: "⚖️", name: "Avukat & Hukuk", desc: "Antalya avukat web sitesi" },
+  { icon: "🦷", name: "Diş Hekimi", desc: "Antalya diş hekimi web sitesi" },
+  { icon: "💊", name: "Eczane & Sağlık", desc: "Antalya eczane web sitesi" },
+  { icon: "🏋️", name: "Spor Salonu", desc: "Antalya spor salonu web sitesi" },
+  { icon: "🌸", name: "Güzellik Salonu", desc: "Antalya güzellik web sitesi" },
+  { icon: "✨", name: "Ve Daha Fazlası", desc: "Tüm sektörler" },
 ];
 ---
 
@@ -31,11 +31,11 @@ const sectors = [
         <span class="text-sm text-gold-400">Sektörler</span>
       </div>
       <h2 class="reveal reveal-delay-1 section-title mb-4">
-        Hizmet Verdiğimiz
+        Antalya'da Hizmet Verdiğimiz
         <span class="gradient-gold">Sektörler</span>
       </h2>
       <p class="reveal reveal-delay-2 section-subtitle mx-auto">
-        Her sektöre özel dijital çözümler sunuyoruz. Hangi sektörde olursanız olun, dijital dünyadaki yerinizi birlikte oluşturalım.
+        Antalya'da her sektöre özel <strong>web tasarım</strong>, <strong>SEO</strong> ve <strong>dijital pazarlama</strong> çözümleri sunuyoruz. Hangi sektörde olursanız olun — otel, restoran, klinik, avukat veya esnaf — dijital dünyadaki yerinizi birlikte oluşturalım.
       </p>
     </div>
 
@@ -43,7 +43,7 @@ const sectors = [
     <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
       {
         sectors.map((sector, i) => (
-          <div class={`reveal reveal-delay-${(i % 5) + 1} glass-card p-4 text-center group cursor-default`}>
+          <div class={`reveal reveal-delay-${(i % 5) + 1} glass-card p-4 text-center group cursor-default`} title={sector.desc}>
             <div class="text-3xl mb-2 transition-transform duration-300 group-hover:scale-125">
               {sector.icon}
             </div>

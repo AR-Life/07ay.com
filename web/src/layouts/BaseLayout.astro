@@ -5,9 +5,53 @@ export interface Props {
 }
 
 const {
-  title = "07 AY — 360° Dijital Ajans | İşletmenizi Dijital Dünyaya Taşıyalım",
-  description = "Google, Instagram ve Facebook'ta görünür olun, yeni müşteriler kazanın. Web sitesi, sosyal medya yönetimi, SEO, dijital reklam ve daha fazlası. Antalya merkezli dijital ajans.",
+  title = "Antalya Web Tasarım & Dijital Ajans | 07 AY — SEO, Sosyal Medya, Reklam",
+  description = "Antalya'nın lider dijital ajansı 07 AY ile web tasarım, SEO, sosyal medya yönetimi ve Google Ads hizmetleri. 150+ mutlu müşteri, %100 memnuniyet. Ücretsiz analiz alın ☎ 0530 770 24 35",
 } = Astro.props;
+
+// FAQ data for Schema (must match FAQSection.astro content exactly)
+const faqSchemaItems = [
+  {
+    question: "Antalya'da en iyi web tasarım firması hangisi?",
+    answer: "Antalya'da en iyi web tasarım firması seçerken hız, SEO uyumu ve modern tasarım kriterlerine dikkat etmelisiniz. 07 AY Dijital Ajans, Google PageSpeed testlerinde 100/100 performans sağlayan, mobil uyumlu ve SEO altyapılı kurumsal web siteleri tasarlayan Antalya merkezli profesyonel bir web tasarım ajansıdır. WordPress gibi hantal altyapılar yerine, dünya standartlarında modern teknolojiler (Astro, Tailwind CSS, Cloudflare) kullanarak işletmenize özel, hızlı ve güvenli siteler üretiyoruz.",
+  },
+  {
+    question: "Antalya web sitesi yaptırmanın maliyeti ne kadar?",
+    answer: "Antalya'da web sitesi yaptırma maliyeti, projenin kapsamına göre değişir. Tek sayfalık tanıtım siteleri, çok sayfalık kurumsal siteler ve e-ticaret siteleri farklı fiyat aralıklarına sahiptir. 07 AY olarak şeffaf fiyatlandırma politikamızla, sürpriz maliyetler çıkarmadan, işletmenizin bütçesine uygun çözümler sunuyoruz. Ücretsiz analiz ve fiyat teklifi almak için WhatsApp hattımızdan bize ulaşabilirsiniz.",
+  },
+  {
+    question: "SEO çalışması ne kadar sürede sonuç verir?",
+    answer: "Profesyonel SEO çalışması genellikle 3-6 ay içinde somut sonuçlar vermeye başlar. Ancak bu süre, sektörünüzdeki rekabet düzeyine, hedeflenen anahtar kelimelere ve mevcut sitenizin durumuna bağlıdır. 07 AY olarak Antalya yerel SEO stratejileriyle, Google Haritalar ve organik arama sonuçlarında işletmenizin görünürlüğünü artırıyoruz. Yerel (GEO) odaklı çalışmalarımız sayesinde Antalya bölgesinde daha hızlı sonuç almanız mümkündür.",
+  },
+  {
+    question: "Sosyal medya yönetimi hizmetiniz neleri kapsar?",
+    answer: "Antalya sosyal medya yönetimi hizmetimiz; Instagram, Facebook, TikTok ve LinkedIn için profesyonel içerik üretimi, post ve reel tasarımları, hashtag stratejisi, takipçi etkileşim yönetimi, reklam kampanyaları ve aylık performans raporlarını kapsar. Markanızın sosyal medyada güçlü bir varlık oluşturmasını sağlıyoruz. İçerik takvimi hazırlama, rakip analizi ve hedef kitle belirleme de dahildir.",
+  },
+  {
+    question: "Neden profesyonel bir dijital ajansla çalışmalıyım?",
+    answer: "Profesyonel bir dijital ajansla çalışmak, zamanınızı ve bütçenizi verimli kullanmanızı sağlar. Amatör çözümler kısa vadede ucuz görünse de, SEO uyumsuz siteler Google'da görünmez, kalitesiz sosyal medya içerikleri müşteri kaybettirir. 07 AY Dijital Ajans olarak stratejik planlama, profesyonel tasarım, teknik SEO ve veri odaklı raporlama ile yatırımınızın karşılığını fazlasıyla almanızı sağlıyoruz.",
+  },
+  {
+    question: "Google Ads ile organik SEO arasındaki fark nedir?",
+    answer: "Google Ads (ücretli reklam), bütçe ayırdığınız sürece anında üst sıralarda görünmenizi sağlar. Organik SEO ise uzun vadeli bir yatırımdır; doğru yapıldığında sürekli ve ücretsiz trafik getirir. 07 AY olarak her iki stratejiyi de birlikte uyguluyoruz: kısa vadede Google Ads ile hemen müşteri kazanırken, uzun vadede organik SEO ile kalıcı sonuçlar elde ediyoruz. Antalya bölgesinde her iki alanda da uzman ekibimizle sonuç odaklı çalışıyoruz.",
+  },
+  {
+    question: "Antalya'da e-ticaret sitesi kurmak ne kadar sürer?",
+    answer: "Antalya'da profesyonel bir e-ticaret sitesi kurulumu, projenin kapsamına bağlı olarak 2-6 hafta sürer. Ürün sayısı, ödeme entegrasyonları, kargo firması entegrasyonları ve özel tasarım istekleri süreyi etkiler. 07 AY olarak Trendyol, Hepsiburada gibi pazar yeri entegrasyonları da dahil olmak üzere komple e-ticaret çözümleri sunuyoruz. SEO uyumlu altyapısı sayesinde Google'da görünürlüğünüz en üst düzeyde olur.",
+  },
+  {
+    question: "Logo tasarımı süreci nasıl işler?",
+    answer: "Logo ve marka kimliği tasarım sürecimiz 4 adımdan oluşur: İlk olarak markanızı, sektörünüzü ve hedef kitlenizi analiz ediyoruz. Ardından 3-5 farklı konsept tasarım sunuyoruz. Seçtiğiniz konsept üzerinde revizyonlar yapıp mükemmelleştiriyoruz. Son olarak logonuzu tüm formatlarda (vektörel, PNG, favicon) teslim ediyoruz. Kurumsal kimlik paketi; kartvizit, antetli kağıt, sosyal medya kit ve brand guideline'ı kapsar.",
+  },
+  {
+    question: "Dijital reklam bütçemi nasıl belirlemeliyim?",
+    answer: "Dijital reklam bütçesi, sektörünüze, hedeflerinize ve rekabet düzeyine göre belirlenir. Antalya'da yerel bir işletme için Google Ads ve Meta (Instagram/Facebook) reklamlarında optimum sonuçlar almak mümkündür. 07 AY olarak reklam bütçenizi en verimli şekilde kullanıyoruz; A/B testleri, hedef kitle optimizasyonu ve detaylı dönüşüm raporları ile her kuruşun karşılığını almanızı sağlıyoruz.",
+  },
+  {
+    question: "Hangi sosyal medya platformu işletmem için en uygun?",
+    answer: "En uygun sosyal medya platformu, işletmenizin sektörüne ve hedef kitlesine bağlıdır. Restoran, otel ve güzellik sektörü için Instagram ve TikTok; B2B hizmetler için LinkedIn; genel tüketici ürünleri için Facebook ve Instagram öne çıkar. 07 AY Dijital Ajans olarak Antalya'daki işletmeniz için en etkili platform stratejisini belirliyor, içerik üretiminden reklam yönetimine kadar tüm süreci profesyonelce yönetiyoruz.",
+  },
+];
 ---
 
 <!doctype html>
@@ -21,13 +65,19 @@ const {
     <!-- SEO -->
     <link rel="canonical" href="https://07ay.com" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#030712" />
-    <meta name="author" content="Ahmet YILDIZ" />
+    <meta name="author" content="07 AY Dijital Ajans" />
+    <meta name="publisher" content="07 AY Dijital Ajans" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="rating" content="general" />
+    <meta name="format-detection" content="telephone=yes" />
 
-    <!-- Geo Targeting -->
+    <!-- Geo Targeting (Antalya SEO) -->
     <meta name="geo.region" content="TR-07" />
     <meta name="geo.placename" content="Antalya" />
+    <meta name="geo.position" content="36.8969;30.7133" />
+    <meta name="ICBM" content="36.8969, 30.7133" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -39,35 +89,67 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:url" content="https://07ay.com" />
     <meta property="og:locale" content="tr_TR" />
-    <link rel="publisher" href="https://07ay.com" />
-    <meta name="publisher" content="Ahmet YILDIZ" />
+    <meta property="og:image" content="https://07ay.com/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="07 AY Dijital Ajans — Antalya Web Tasarım, SEO ve Dijital Reklam Ajansı" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://07ay.com/images/og-image.png" />
 
     <!-- Schema.org - Organization -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "07 AY Dijital Ajans",
-      "alternateName": "07ay",
+      "alternateName": ["07ay", "07 AY", "07 AY Ajans"],
       "url": "https://07ay.com",
       "logo": "https://07ay.com/favicon.svg",
-      "description": "İşletmelerin dijital dünyada büyümesini sağlayan 360° dijital ajans. SEO, sosyal medya yönetimi, web tasarım, dijital reklam ve daha fazlası.",
+      "image": "https://07ay.com/images/og-image.png",
+      "description": "Antalya merkezli 360° dijital ajans. Web tasarım, SEO, sosyal medya yönetimi, Google Ads, logo tasarımı ve e-ticaret çözümleri. İşletmelerin dijital dünyada büyümesini sağlıyoruz.",
       "foundingDate": "2024",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Turkey"
+      "founder": {
+        "@type": "Person",
+        "name": "Ahmet YILDIZ"
       },
+      "email": "info@07ay.com",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Antalya",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "Türkiye"
+          }
+        },
+        {
+          "@type": "Country",
+          "name": "Türkiye"
+        }
+      ],
+      "knowsAbout": [
+        "Web Tasarım",
+        "SEO",
+        "Dijital Pazarlama",
+        "Sosyal Medya Yönetimi",
+        "Google Ads",
+        "E-Ticaret",
+        "Logo Tasarımı",
+        "Marka Kimliği",
+        "Dijital Reklam",
+        "İçerik Üretimi"
+      ],
       "contactPoint": [
         {
           "@type": "ContactPoint",
           "telephone": "+90-530-770-24-35",
           "contactType": "customer service",
           "availableLanguage": "Turkish",
-          "areaServed": "TR"
+          "areaServed": "TR",
+          "contactOption": "TollFree"
         },
         {
           "@type": "ContactPoint",
@@ -80,26 +162,73 @@ const {
       "sameAs": []
     })} />
 
-    <!-- Schema.org - LocalBusiness -->
+    <!-- Schema.org - LocalBusiness / ProfessionalService -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
+      "@id": "https://07ay.com/#organization",
       "name": "07 AY Dijital Ajans",
-      "image": "https://07ay.com/favicon.svg",
+      "alternateName": "07ay",
+      "image": "https://07ay.com/images/og-image.png",
       "url": "https://07ay.com",
       "telephone": "+90-530-770-24-35",
+      "email": "info@07ay.com",
+      "description": "Antalya'nın lider dijital ajansı. Web tasarım, SEO, sosyal medya yönetimi, Google Ads ve e-ticaret çözümleri sunan profesyonel dijital reklam ajansı.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Antalya",
+        "addressRegion": "Antalya",
         "addressCountry": "TR"
       },
-      "priceRange": "₺₺",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.8969,
+        "longitude": 30.7133
       },
+      "priceRange": "₺₺",
+      "currenciesAccepted": "TRY",
+      "paymentAccepted": "Nakit, Banka Transferi, Kredi Kartı",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "10:00",
+          "closes": "15:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "150",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Fazıl Yiğit" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Web sitemizi yaptırdık, SEO çalışmalarıyla Google'da çok iyi konumlara geldik. Artık müşteriler bizi daha rahat buluyor. Yatırımımızın karşılığını fazlasıyla aldık."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Erol Özcan" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Sağlık turizmi alanındaki web projemiz için 07 AY ile çalıştık. Çok dilli ve hızlı altyapı sayesinde yurtdışından gelen hasta taleplerimiz gözle görülür şekilde arttı."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Afra Nur Kaşlı" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Bölgesel (GEO) odaklı ve şık kişisel sitem sayesinde kendi bölgemdeki danışanlarıma çok daha kolay ulaşıyorum. Sürecin her adımında çok profesyonellerdi."
+        }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Dijital Ajans Hizmetleri",
@@ -108,24 +237,33 @@ const {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "SEO - Arama Motoru Optimizasyonu",
-              "description": "Google'da üst sıralarda yer almanızı sağlıyoruz."
+              "name": "Antalya Web Tasarım",
+              "description": "Modern, hızlı, mobil uyumlu ve SEO altyapılı kurumsal web sitesi tasarımı. E-ticaret, otel, klinik, restoran ve her sektöre özel web sitesi çözümleri.",
+              "serviceType": "Web Tasarım",
+              "areaServed": { "@type": "City", "name": "Antalya" },
+              "provider": { "@type": "Organization", "name": "07 AY Dijital Ajans" }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Sosyal Medya Yönetimi",
-              "description": "Instagram, Facebook ve TikTok hesaplarınızı profesyonelce yönetiyoruz."
+              "name": "Antalya SEO Danışmanlığı",
+              "description": "Google'da üst sıralarda yer almanızı sağlayan yerel SEO, teknik SEO ve içerik optimizasyonu hizmetleri. Google Haritalar (Benim İşletmem) yönetimi dahil.",
+              "serviceType": "SEO",
+              "areaServed": { "@type": "City", "name": "Antalya" },
+              "provider": { "@type": "Organization", "name": "07 AY Dijital Ajans" }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Web Sitesi Tasarımı ve Geliştirme",
-              "description": "Modern, hızlı ve mobil uyumlu web sitenizi tasarlıyoruz."
+              "name": "Antalya Sosyal Medya Yönetimi",
+              "description": "Instagram, Facebook, TikTok ve LinkedIn hesaplarınızı profesyonelce yönetiyoruz. İçerik üretimi, reel tasarımları ve reklam kampanyaları.",
+              "serviceType": "Sosyal Medya Yönetimi",
+              "areaServed": { "@type": "City", "name": "Antalya" },
+              "provider": { "@type": "Organization", "name": "07 AY Dijital Ajans" }
             }
           },
           {
@@ -133,7 +271,10 @@ const {
             "itemOffered": {
               "@type": "Service",
               "name": "Dijital Reklam Yönetimi",
-              "description": "Google Ads, Meta Ads, TikTok Ads ve YouTube reklamlarınızı yönetiyoruz."
+              "description": "Google Ads, Meta Ads (Instagram/Facebook), TikTok Ads ve YouTube reklamlarınızı profesyonelce yönetiyoruz. ROI odaklı kampanya stratejileri.",
+              "serviceType": "Dijital Reklam",
+              "areaServed": { "@type": "City", "name": "Antalya" },
+              "provider": { "@type": "Organization", "name": "07 AY Dijital Ajans" }
             }
           },
           {
@@ -141,7 +282,10 @@ const {
             "itemOffered": {
               "@type": "Service",
               "name": "Logo ve Marka Kimliği Tasarımı",
-              "description": "Profesyonel logo ve kurumsal kimlik tasarımı yapıyoruz."
+              "description": "Profesyonel logo tasarımı, kurumsal kimlik, kartvizit, antetli kağıt ve brand guideline hazırlama hizmetleri.",
+              "serviceType": "Grafik Tasarım",
+              "areaServed": { "@type": "City", "name": "Antalya" },
+              "provider": { "@type": "Organization", "name": "07 AY Dijital Ajans" }
             }
           },
           {
@@ -149,7 +293,32 @@ const {
             "itemOffered": {
               "@type": "Service",
               "name": "E-Ticaret Çözümleri",
-              "description": "Online satış sitenizi kuruyor, pazar yeri entegrasyonlarınızı yapıyoruz."
+              "description": "Online satış sitenizi kuruyor, Trendyol ve Hepsiburada pazar yeri entegrasyonlarınızı yapıyoruz. SEO uyumlu e-ticaret altyapısı.",
+              "serviceType": "E-Ticaret",
+              "areaServed": { "@type": "City", "name": "Antalya" },
+              "provider": { "@type": "Organization", "name": "07 AY Dijital Ajans" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Video ve Fotoğraf Çekimi",
+              "description": "Profesyonel tanıtım videoları, ürün fotoğrafları ve sosyal medya içerikleri ile markanızı öne çıkarın.",
+              "serviceType": "Video Prodüksiyon",
+              "areaServed": { "@type": "City", "name": "Antalya" },
+              "provider": { "@type": "Organization", "name": "07 AY Dijital Ajans" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "WhatsApp Business Kurulumu",
+              "description": "WhatsApp Business kurulumu ve WhatsApp reklamları ile doğrudan müşterilerinize ulaşın.",
+              "serviceType": "Dijital Pazarlama",
+              "areaServed": { "@type": "City", "name": "Antalya" },
+              "provider": { "@type": "Organization", "name": "07 AY Dijital Ajans" }
             }
           }
         ]
@@ -161,7 +330,54 @@ const {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "07 AY Dijital Ajans",
-      "url": "https://07ay.com"
+      "alternateName": "07ay",
+      "url": "https://07ay.com",
+      "description": "Antalya merkezli profesyonel web tasarım, SEO ve dijital reklam ajansı.",
+      "inLanguage": "tr"
+    })} />
+
+    <!-- Schema.org - WebPage -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": title,
+      "description": description,
+      "url": "https://07ay.com",
+      "inLanguage": "tr",
+      "isPartOf": { "@type": "WebSite", "url": "https://07ay.com" },
+      "about": {
+        "@type": "Organization",
+        "name": "07 AY Dijital Ajans"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".section-title", ".section-subtitle"]
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Ana Sayfa",
+            "item": "https://07ay.com"
+          }
+        ]
+      }
+    })} />
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqSchemaItems.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
     })} />
 
     <!-- Preload primary font woff2 explicitly to avoid critical request chain delay -->
