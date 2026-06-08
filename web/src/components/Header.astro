@@ -138,78 +138,80 @@ const navLinks = [
 </header>
 
 <script>
-  // Header scroll effect
-  const header = document.getElementById("header");
-  let ticking = false;
-  let menuOpen = false;
+  {
+    // Header scroll effect
+    const header = document.getElementById("header");
+    let ticking = false;
+    let menuOpen = false;
 
-  const updateHeaderBackground = () => {
-    if (window.scrollY > 50 || menuOpen) {
-      header?.classList.add(
-        "bg-night-900/95",
-        "backdrop-blur-xl",
-        "border-b",
-        "border-white/5",
-      );
-    } else {
-      header?.classList.remove(
-        "bg-night-900/95",
-        "backdrop-blur-xl",
-        "border-b",
-        "border-white/5",
-      );
-    }
-  };
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          updateHeaderBackground();
-          ticking = false;
-        });
-        ticking = true;
+    const updateHeaderBackground = () => {
+      if (window.scrollY > 50 || menuOpen) {
+        header?.classList.add(
+          "bg-night-900/95",
+          "backdrop-blur-xl",
+          "border-b",
+          "border-white/5",
+        );
+      } else {
+        header?.classList.remove(
+          "bg-night-900/95",
+          "backdrop-blur-xl",
+          "border-b",
+          "border-white/5",
+        );
       }
-    },
-    { passive: true },
-  );
+    };
 
-  // Mobile menu toggle
-  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const bar1 = document.getElementById("bar1");
-  const bar2 = document.getElementById("bar2");
-  const bar3 = document.getElementById("bar3");
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            updateHeaderBackground();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      },
+      { passive: true },
+    );
 
-  mobileMenuBtn?.addEventListener("click", () => {
-    menuOpen = !menuOpen;
-    mobileMenu?.classList.toggle("hidden");
-    mobileMenuBtn?.setAttribute("aria-expanded", String(menuOpen));
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const bar1 = document.getElementById("bar1");
+    const bar2 = document.getElementById("bar2");
+    const bar3 = document.getElementById("bar3");
 
-    updateHeaderBackground();
+    mobileMenuBtn?.addEventListener("click", () => {
+      menuOpen = !menuOpen;
+      mobileMenu?.classList.toggle("hidden");
+      mobileMenuBtn?.setAttribute("aria-expanded", String(menuOpen));
 
-    if (menuOpen) {
-      bar1?.classList.add("rotate-45", "translate-y-2");
-      bar2?.classList.add("opacity-0");
-      bar3?.classList.add("-rotate-45", "-translate-y-2");
-    } else {
-      bar1?.classList.remove("rotate-45", "translate-y-2");
-      bar2?.classList.remove("opacity-0");
-      bar3?.classList.remove("-rotate-45", "-translate-y-2");
-    }
-  });
-
-  // Close mobile menu on link click
-  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu?.classList.add("hidden");
-      menuOpen = false;
-      mobileMenuBtn?.setAttribute("aria-expanded", "false");
-      bar1?.classList.remove("rotate-45", "translate-y-2");
-      bar2?.classList.remove("opacity-0");
-      bar3?.classList.remove("-rotate-45", "-translate-y-2");
       updateHeaderBackground();
+
+      if (menuOpen) {
+        bar1?.classList.add("rotate-45", "translate-y-2");
+        bar2?.classList.add("opacity-0");
+        bar3?.classList.add("-rotate-45", "-translate-y-2");
+      } else {
+        bar1?.classList.remove("rotate-45", "translate-y-2");
+        bar2?.classList.remove("opacity-0");
+        bar3?.classList.remove("-rotate-45", "-translate-y-2");
+      }
     });
-  });
+
+    // Close mobile menu on link click
+    document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu?.classList.add("hidden");
+        menuOpen = false;
+        mobileMenuBtn?.setAttribute("aria-expanded", "false");
+        bar1?.classList.remove("rotate-45", "translate-y-2");
+        bar2?.classList.remove("opacity-0");
+        bar3?.classList.remove("-rotate-45", "-translate-y-2");
+        updateHeaderBackground();
+      });
+    });
+  }
 </script>
