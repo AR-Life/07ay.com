@@ -1,0 +1,48 @@
+---
+import ActionBar from "./_components/ActionBar.astro";
+import HeaderAndPackages from "./_components/HeaderAndPackages.astro";
+import PricingTable from "./_components/PricingTable.astro";
+import TimelineAndApproval1 from "./_components/TimelineAndApproval1.astro";
+import DetailedResponses from "./_components/DetailedResponses.astro";
+import TimelineAndApproval2 from "./_components/TimelineAndApproval2.astro";
+import TechStack from "./_components/TechStack.astro";
+import TechDirector from "./_components/TechDirector.astro";
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Nomade & Turm Café — 360° Dijital Ajans & Marka Teklifi | 07 AY Dijital
+      Ajans
+    </title>
+
+    <!-- Fonts matching 07ay.com -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/teklif/nomade/style.css" />
+  </head>
+  <body>
+    <ActionBar />
+    <!-- =========================================================
+       MAIN PROPOSAL DOCUMENT
+       ========================================================= -->
+    <div class="container">
+      <div class="proposal-paper">
+        <HeaderAndPackages />
+        <PricingTable />
+        <TimelineAndApproval1 />
+        <DetailedResponses />
+        <TimelineAndApproval2 />
+        <TechStack />
+        <TechDirector />
+      </div>
+    </div>
+  </body>
+</html>
