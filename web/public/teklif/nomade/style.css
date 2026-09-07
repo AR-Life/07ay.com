@@ -2388,6 +2388,22 @@
         }
 
         /* Page Break Discipline */
+        .page-break-before {
+          break-before: page;
+          page-break-before: always;
+        }
+
+        .no-break {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        .section-header {
+          break-after: avoid;
+          page-break-after: avoid;
+        }
+      }
+
       /* =========================================================
        NEW: SOCIAL MEDIA DELIVERABLES TABLE
        ========================================================= */
@@ -2626,21 +2642,6 @@
       @media (max-width: 900px) {
         .architecture-diagram {
           grid-template-columns: 1fr;
-        }
-      }
-        .page-break-before {
-          break-before: page;
-          page-break-before: always;
-        }
-
-        .no-break {
-          break-inside: avoid;
-          page-break-inside: avoid;
-        }
-
-        .section-header {
-          break-after: avoid;
-          page-break-after: avoid;
         }
       }
 
