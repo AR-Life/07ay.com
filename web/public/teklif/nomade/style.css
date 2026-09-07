@@ -2667,3 +2667,385 @@
           justify-content: space-between;
         }
       }
+
+      /* =========================================================
+         MIND KURUMSAL AJANS 4-CARD GRID (07 AY LUXURY DESIGN SYSTEM)
+         ========================================================= */
+      .mind-cards-section {
+        margin-top: 24px;
+        margin-bottom: 36px;
+      }
+
+      .mind-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .mind-card {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: linear-gradient(180deg, rgba(13, 18, 36, 0.88) 0%, rgba(8, 11, 24, 0.98) 100%);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .mind-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 42px rgba(0, 0, 0, 0.65);
+      }
+
+      .mind-card-header {
+        position: relative;
+        padding: 20px 18px 16px;
+        text-align: left;
+        border-bottom: 1px solid var(--glass-border);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .mind-card-top-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .mind-card-badge {
+        font-family: var(--font-mono);
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .mind-card-category {
+        font-size: 0.68rem;
+        color: var(--text-muted);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+      }
+
+      .mind-card-title {
+        font-size: 1.05rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        line-height: 1.3;
+        margin: 0;
+        color: #ffffff;
+      }
+
+      /* Card Theme 1: 07 AY Signature Gold / Amber */
+      .mind-card-theme-1 {
+        border-top: 2.5px solid var(--gold-400);
+      }
+      .mind-card-theme-1 .mind-card-header {
+        background: radial-gradient(circle at 50% -20%, rgba(212, 168, 67, 0.16) 0%, transparent 70%);
+      }
+      .mind-card-theme-1 .mind-card-badge {
+        background: rgba(212, 168, 67, 0.12);
+        color: var(--gold-300);
+        border: 1px solid rgba(212, 168, 67, 0.35);
+      }
+      .mind-card-theme-1:hover {
+        border-color: rgba(212, 168, 67, 0.5);
+        box-shadow: 0 20px 42px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 168, 67, 0.15);
+      }
+      .mind-card-theme-1 .mind-card-item-num {
+        background: rgba(212, 168, 67, 0.12);
+        color: var(--gold-300);
+        border: 1px solid rgba(212, 168, 67, 0.25);
+      }
+      .mind-card-theme-1 .mind-card-price-val {
+        color: var(--gold-300);
+      }
+      .mind-card-theme-1 .mind-card-price-tax {
+        background: rgba(212, 168, 67, 0.12);
+        color: var(--gold-300);
+        border: 1px solid rgba(212, 168, 67, 0.3);
+      }
+
+      /* Card Theme 2: Cosmic Sapphire Blue */
+      .mind-card-theme-2 {
+        border-top: 2.5px solid var(--cosmic-blue);
+      }
+      .mind-card-theme-2 .mind-card-header {
+        background: radial-gradient(circle at 50% -20%, rgba(59, 130, 246, 0.16) 0%, transparent 70%);
+      }
+      .mind-card-theme-2 .mind-card-badge {
+        background: rgba(59, 130, 246, 0.12);
+        color: #93c5fd;
+        border: 1px solid rgba(59, 130, 246, 0.35);
+      }
+      .mind-card-theme-2:hover {
+        border-color: rgba(59, 130, 246, 0.5);
+        box-shadow: 0 20px 42px rgba(0, 0, 0, 0.65), 0 0 25px rgba(59, 130, 246, 0.15);
+      }
+      .mind-card-theme-2 .mind-card-item-num {
+        background: rgba(59, 130, 246, 0.12);
+        color: #93c5fd;
+        border: 1px solid rgba(59, 130, 246, 0.25);
+      }
+      .mind-card-theme-2 .mind-card-price-val {
+        color: #93c5fd;
+      }
+      .mind-card-theme-2 .mind-card-price-tax {
+        background: rgba(59, 130, 246, 0.12);
+        color: #93c5fd;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+      }
+
+      /* Card Theme 3: Amethyst Purple / Studio Platinum */
+      .mind-card-theme-3 {
+        border-top: 2.5px solid #a855f7;
+      }
+      .mind-card-theme-3 .mind-card-header {
+        background: radial-gradient(circle at 50% -20%, rgba(168, 85, 247, 0.16) 0%, transparent 70%);
+      }
+      .mind-card-theme-3 .mind-card-badge {
+        background: rgba(168, 85, 247, 0.12);
+        color: #d8b4fe;
+        border: 1px solid rgba(168, 85, 247, 0.35);
+      }
+      .mind-card-theme-3:hover {
+        border-color: rgba(168, 85, 247, 0.5);
+        box-shadow: 0 20px 42px rgba(0, 0, 0, 0.65), 0 0 25px rgba(168, 85, 247, 0.15);
+      }
+      .mind-card-theme-3 .mind-card-item-num {
+        background: rgba(168, 85, 247, 0.12);
+        color: #d8b4fe;
+        border: 1px solid rgba(168, 85, 247, 0.25);
+      }
+      .mind-card-theme-3 .mind-card-price-val {
+        color: #d8b4fe;
+      }
+      .mind-card-theme-3 .mind-card-price-tax {
+        background: rgba(168, 85, 247, 0.12);
+        color: #d8b4fe;
+        border: 1px solid rgba(168, 85, 247, 0.3);
+      }
+
+      /* Card Theme 4: Emerald Jade Growth */
+      .mind-card-theme-4 {
+        border-top: 2.5px solid var(--emerald-500);
+      }
+      .mind-card-theme-4 .mind-card-header {
+        background: radial-gradient(circle at 50% -20%, rgba(16, 185, 129, 0.16) 0%, transparent 70%);
+      }
+      .mind-card-theme-4 .mind-card-badge {
+        background: rgba(16, 185, 129, 0.12);
+        color: #6ee7b7;
+        border: 1px solid rgba(16, 185, 129, 0.35);
+      }
+      .mind-card-theme-4:hover {
+        border-color: rgba(16, 185, 129, 0.5);
+        box-shadow: 0 20px 42px rgba(0, 0, 0, 0.65), 0 0 25px rgba(16, 185, 129, 0.15);
+      }
+      .mind-card-theme-4 .mind-card-item-num {
+        background: rgba(16, 185, 129, 0.12);
+        color: #6ee7b7;
+        border: 1px solid rgba(16, 185, 129, 0.25);
+      }
+      .mind-card-theme-4 .mind-card-price-val {
+        color: #6ee7b7;
+      }
+      .mind-card-theme-4 .mind-card-price-tax {
+        background: rgba(16, 185, 129, 0.12);
+        color: #6ee7b7;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+      }
+
+      /* Card Body & Features */
+      .mind-card-body {
+        padding: 18px 16px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .mind-card-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.82rem;
+        color: #cbd5e1;
+        line-height: 1.45;
+      }
+
+      .mind-card-item-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      /* Luxury Glass Price Bar */
+      .mind-card-price-bar {
+        padding: 16px 18px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.05) 100%);
+        border-top: 1px solid var(--glass-border);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+
+      .mind-card-price-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: var(--text-muted);
+        font-weight: 700;
+      }
+
+      .mind-card-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .mind-card-price-val {
+        font-family: var(--font-mono);
+        font-size: 1.25rem;
+        font-weight: 900;
+        letter-spacing: -0.3px;
+        line-height: 1.15;
+      }
+
+      .mind-card-price-tax {
+        font-size: 0.72rem;
+        font-weight: 700;
+        border-radius: 4px;
+        padding: 2px 7px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .mind-card-price-sub {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      @media (max-width: 991px) {
+        .mind-cards-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 14px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .mind-cards-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 10px;
+        }
+        .mind-card-header {
+          padding: 14px 10px 10px;
+        }
+        .mind-card-title {
+          font-size: 0.85rem;
+        }
+        .mind-card-badge {
+          font-size: 0.6rem;
+          padding: 2px 7px;
+        }
+        .mind-card-category {
+          display: none;
+        }
+        .mind-card-body {
+          padding: 12px 10px;
+          gap: 8px;
+        }
+        .mind-card-item {
+          font-size: 0.74rem;
+          gap: 6px;
+        }
+        .mind-card-item-num {
+          width: 16px;
+          height: 16px;
+          font-size: 0.58rem;
+        }
+        .mind-card-price-bar {
+          padding: 12px 10px;
+        }
+        .mind-card-price-val {
+          font-size: 1rem;
+        }
+        .mind-card-price-tax {
+          font-size: 0.65rem;
+          padding: 1px 5px;
+        }
+        .mind-card-price-sub {
+          font-size: 0.66rem;
+        }
+      }
+
+      @media print {
+        .mind-cards-grid {
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 8px !important;
+        }
+        .mind-card {
+          box-shadow: none !important;
+          border: 1px solid #cbd5e1 !important;
+          background: #ffffff !important;
+          page-break-inside: avoid !important;
+        }
+        .mind-card-header {
+          background: #f8fafc !important;
+          border-bottom-color: #e2e8f0 !important;
+        }
+        .mind-card-title {
+          color: #0f172a !important;
+        }
+        .mind-card-body {
+          background: #ffffff !important;
+        }
+        .mind-card-item {
+          color: #1e293b !important;
+        }
+        .mind-card-item-num {
+          background: #f1f5f9 !important;
+          color: #475569 !important;
+          border-color: #cbd5e1 !important;
+        }
+        .mind-card-price-bar {
+          background: #f8fafc !important;
+          border-top-color: #e2e8f0 !important;
+        }
+        .mind-card-price-val {
+          color: #0f172a !important;
+        }
+        .mind-card-price-tax {
+          background: #f1f5f9 !important;
+          color: #475569 !important;
+          border-color: #cbd5e1 !important;
+        }
+        .mind-card-price-sub {
+          color: #64748b !important;
+        }
+      }
